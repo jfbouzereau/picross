@@ -31,18 +31,16 @@ node picross.js data1.txt
 
 It will produce the following output 
 ```
-[
-  [ 0, 1, 1, 0, 0 ],
-  [ 0, 1, 1, 0, 1 ],
-  [ 0, 0, 1, 0, 1 ],
-  [ 0, 1, 1, 1, 0 ],
-  [ 1, 0, 1, 0, 0 ],
-  [ 1, 0, 1, 0, 0 ],
-  [ 0, 0, 1, 1, 0 ],
-  [ 0, 1, 0, 1, 0 ],
-  [ 0, 1, 0, 1, 1 ],
-  [ 1, 1, 0, 0, 0 ]
-]
+. X X . .
+. X X . X
+. . X . X
+. X X X .
+X . X . .
+X . X . .
+. . X X .
+. X . X .
+. X . X X
+X X . . .
 ```
 corresponding to the solution :
 ![](sol1.jpg)

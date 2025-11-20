@@ -10,11 +10,12 @@ var NCOL = lines[0].split(" ")[1]*1;
 
 var H = [];
 for(var row=0;row<NROW;row++)
-	H[row] = lines[row+1].split(" ").map(x=>x*1);
+	H[row] = lines[row+1].split(" ").map(x=>x*1).filter(x=>x);
 
 var V = [];
 for(var col=0;col<NCOL;col++)
-	V[col] = lines[col+NROW+1].split(" ").map(x=>x*1);
+	V[col] = lines[col+NROW+1].split(" ").map(x=>x*1).filter(x=>x);
+
 
 var G = [];
 for(var row=0;row<NROW;row++)
@@ -29,32 +30,25 @@ console.log(V);
 run(0,0);
 
 function run(row,col) {
-	if(row>=NROW+NCOL-1) {
-		console.log(G);
+	if(row>=NROW) {
+		display();
 		return;
 	}	
-	if(col<0) {		
-		return run(0,row);
-	}	
 	if(col>=NCOL) {
-		return run(row+1,col-1);
+		return run(row+1,0);
 	}
-	if(row>=NROW) {
-		return run(row+1,col-1);
-	}	
-
 
 	G[row][col] = 1;
 	if(hcheck(row)) {
 		if(vcheck(col)) {
-			run(row+1,col-1);
+			run(row,col+1);
 		}
 	}
 
 	G[row][col] = 0;
 	if(hcheck(row)) {
 		if(vcheck(col)) {
-			run(row+1,col-1);
+			run(row,col+1);
 		}
 	}
 
@@ -152,4 +146,8 @@ function tilt(msg) {
 	process.exit(1);
 }
 
+function display() {	
+	for(var row=0;row<NROW;row++)
+		console.log(G[row].map(x=>".X"[x]).join(" "));
+}
 
