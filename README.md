@@ -22,7 +22,10 @@ Data is provided as text file. Example data1.txt :
 2 1
 ```
 corresponds to this problem :
+
+
 ![](pic1.jpg)
+
 
 To execute, run the command
 ```
@@ -43,4 +46,6 @@ X . X . .
 X X . . .
 ```
 corresponding to the solution :
+
+
 ![](sol1.jpg)
